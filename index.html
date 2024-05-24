@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Project tracking intro component</title>
+  </head>
+  <body>
+    <div class="blue-shape"></div>
+    <header class="main-header">
+      <nav class="navbar">
+        <img src="/images/logo.svg" alt="Logo" class="logo" />
+        <div class="navbar-menu">
+          <ul class="menu-list">
+            <li class="menu-item"><a href="#">Product</a></li>
+            <li class="menu-item"><a href="#">Features</a></li>
+            <li class="menu-item"><a href="#">Pricing</a></li>
+          </ul>
+          <span class="circle">&#9679;</span>
+          <a href="#" class="cta-btn">Login</a>
+        </div>
+        <div class="hamburger hidden"></div>
+      </nav>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu-container">
+        <div id="menu" class="mobile-menu">
+          <a href="#" class="menu-link">Product</a>
+          <a href="#" class="menu-link">Features</a>
+          <a href="#" class="menu-link">Pricing</a>
+          <div class="line"></div>
+          <a href="#" class="cta-btn menu-link">Login</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="dashboard">
+        <div class="heading">
+          <h4 class="bg-blue">New</h4>
+          <p>Monograph Dashboard</p>
+        </div>
+
+        <h1 class="main">Powerful insights into your team</h1>
+        <p class="body">Project planning and time tracking for agile teams</p>
+
+        <div class="btns">
+          <a href="#" class="btn">Schedule a demo</a>
+          <p id="changeable">to see a live preview</p>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="/images/illustration-devices.svg" alt="Hero" />
+      </div>
+    </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const menu = document.querySelector(".mobile-menu");
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const changeable = document.getElementById("changeable");
+
+        function updateText(mq) {
+          if (mq.matches) {
+            changeable.textContent = "to see a preview";
+          } else {
+            changeable.textContent = "to see a live preview";
+          }
+        }
+
+        const mq = window.matchMedia("(max-width: 400px)");
+        updateText(mq);
+        mq.addEventListener("change", updateText);
+      });
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("open");
+        menu.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
