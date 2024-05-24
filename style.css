@@ -278,6 +278,7 @@ body {
   }
   .dashboard {
     margin-top: 6em;
+    z-index: 100;
   }
   .dashboard .main {
     font-size: 3.5em;
@@ -354,7 +355,7 @@ body {
   }
   .blue-shape {
     width: 50vw;
-    height: 72vh;
+    height: 58vh;
     border-bottom-left-radius: 70px;
   }
   .container .hero-image img {
